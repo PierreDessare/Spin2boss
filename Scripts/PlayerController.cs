@@ -3,11 +3,17 @@ using System;
 
 public partial class PlayerController : Sprite2D
 {
-	private float _baseSpeed = 500f;
+	
+	//Exportables stats here
+	[Export] private float _baseSpeed = 500f;
+	//Exportables object here(managers/handlers...)
+	[Export]private ShootManager _shootManager;
+	//Non exportables here
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,6 +53,9 @@ public partial class PlayerController : Sprite2D
 	//should be handled here,instead of doing Input.XX do @event.XX
 	public override void _UnhandledInput(InputEvent @event)
 	{
-		
+		if (@event.IsActionPressed("Fire1"))
+		{
+			_shootManager.FireActive();
+		}
 	}
 }

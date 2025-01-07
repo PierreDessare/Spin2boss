@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://d08mh10yj57o"]
+
+[ext_resource type="Texture2D" uid="uid://dpu5q0bdawmys" path="res://icon.svg" id="1_3e1ex"]
+[ext_resource type="Script" path="res://Scripts/PlayerController.cs" id="2_jwba6"]
+[ext_resource type="Script" path="res://Scripts/ShootManager.cs" id="3_us4xd"]
+
+[node name="Sprite2D" type="Sprite2D" node_paths=PackedStringArray("_shootManager")]
+position = Vector2(341, 180)
+texture = ExtResource("1_3e1ex")
+script = ExtResource("2_jwba6")
+_shootManager = NodePath("ShootManager")
+
+[node name="ShootManager" type="Node" parent="."]
+script = ExtResource("3_us4xd")
