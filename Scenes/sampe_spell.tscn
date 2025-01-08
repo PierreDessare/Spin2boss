@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjll2fm28va84"]
+
+[ext_resource type="Script" path="res://Scripts/SampeSpell.cs" id="1_1tg70"]
+[ext_resource type="PackedScene" uid="uid://byf0w0wrtqtkx" path="res://Scenes/aoe.tscn" id="2_53vkk"]
+
+[node name="SampeSpell" type="Node2D" node_paths=PackedStringArray("CastTimer")]
+script = ExtResource("1_1tg70")
+PackedAOEScene = ExtResource("2_53vkk")
+CastTimer = NodePath("SpellCastTimer")
+castTime = 1.0
+
+[node name="SpellCastTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SpellCastTimer" to="." method="CastEnd"]

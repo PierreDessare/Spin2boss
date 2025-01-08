@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://8vhd7nhfn2q0"]
+
+[ext_resource type="Script" path="res://Scripts/SampleBossController.cs" id="1_f6nh6"]
+[ext_resource type="Texture2D" uid="uid://dpu5q0bdawmys" path="res://icon.svg" id="2_is6gi"]
+[ext_resource type="PackedScene" uid="uid://cjll2fm28va84" path="res://Scenes/sampe_spell.tscn" id="2_ytwbf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qbkt"]
+
+[node name="SampleBoss" type="Node2D"]
+script = ExtResource("1_f6nh6")
+PackedSpellScene = ExtResource("2_ytwbf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.793187, 0.0608655, 5.77569e-07, 1)
+texture = ExtResource("2_is6gi")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Sprite2D"]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/CharacterBody2D"]
+shape = SubResource("CircleShape2D_6qbkt")
+debug_color = Color(0.946065, 0, 0.438521, 0.42)

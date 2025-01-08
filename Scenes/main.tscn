@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bukg3xi88vll5"]
+
+[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_veh6e"]
+[ext_resource type="PackedScene" uid="uid://d08mh10yj57o" path="res://Scenes/sprite_2d.tscn" id="2_s1uv1"]
+[ext_resource type="PackedScene" uid="uid://8vhd7nhfn2q0" path="res://Scenes/sample_boss.tscn" id="2_tnfds"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vddow"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_veh6e")
+
+[node name="Arena" type="Node" parent="."]
+
+[node name="Marker" type="Node2D" parent="Arena"]
+
+[node name="Marker2D" type="Marker2D" parent="Arena/Marker"]
+position = Vector2(388, 307)
+gizmo_extents = 537.5
+
+[node name="Marker2D6" type="Marker2D" parent="Arena/Marker"]
+position = Vector2(846, 307)
+gizmo_extents = 537.5
+
+[node name="Marker2D5" type="Marker2D" parent="Arena/Marker"]
+position = Vector2(165, 104)
+gizmo_extents = 537.5
+
+[node name="Marker2D2" type="Marker2D" parent="Arena/Marker"]
+position = Vector2(1027, 104)
+gizmo_extents = 537.5
+
+[node name="Marker2D3" type="Marker2D" parent="Arena/Marker"]
+position = Vector2(1027, 534)
+gizmo_extents = 537.5
+
+[node name="Marker2D4" type="Marker2D" parent="Arena/Marker"]
+position = Vector2(163, 534)
+gizmo_extents = 537.5
+
+[node name="Background" type="Sprite2D" parent="Arena"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(580.75, 330.75)
+scale = Vector2(1162.5, 662.5)
+texture = SubResource("CanvasTexture_vddow")
+
+[node name="Sprite2D2" parent="." instance=ExtResource("2_s1uv1")]
+position = Vector2(564, 481)
+
+[node name="SampleBoss" parent="." instance=ExtResource("2_tnfds")]
+position = Vector2(560, 141)
