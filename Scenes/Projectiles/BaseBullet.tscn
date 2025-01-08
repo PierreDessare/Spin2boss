@@ -3,14 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bm7j4ao7rm0gc" path="res://Sprites/Projectiles/Stab_V5__1.png" id="1_yu5tp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0v47"]
-size = Vector2(640, 206)
+size = Vector2(314, 114)
 
 [node name="RigidBody2D" type="RigidBody2D"]
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(119, -3)
+position = Vector2(61, -9)
 shape = SubResource("RectangleShape2D_f0v47")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.485, 0.485)
 texture = ExtResource("1_yu5tp")
