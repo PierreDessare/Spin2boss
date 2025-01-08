@@ -4,7 +4,7 @@ using System;
 /// <summary>
 /// Class that handles projectiles spawning for the player only
 /// </summary>
-public partial class ShootManager : Node
+public partial class ShootManager : Node2D
 {
 	// Called when the node enters the scene tree for the first time.
 	private BaseGun _activeWeapon;
@@ -23,7 +23,7 @@ public partial class ShootManager : Node
 	{
 		var _tmpGunScene = GD.Load<PackedScene>("res://Scenes/Weapon/BaseGun.tscn");
 		_activeWeapon = _tmpGunScene.Instantiate<BaseGun>();
-		GetTree().Root.CallDeferred("add_child",_activeWeapon);
+		AddChild(_activeWeapon);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
