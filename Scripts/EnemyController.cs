@@ -8,11 +8,11 @@ public partial class EnemyController : CharacterBody2D
 	public enum EnemyState {
 	  MOVING, // Movement from self.position to movementTarget.position with no action
 	  ATTACKING, // Movement from self.position to movementTarget.position during an action
-	  STATIC, // Stay immobile with no action
+	  IDLE, // Stay immobile with no action
 	  CASTING, // Stay immobile during an action
 	}
 
-	private EnemyState _state = EnemyState.STATIC;
+	private EnemyState _state = EnemyState.IDLE;
 	private float _health;
 	private float _movementSpeed;
 	private Vector2 _movementTarget;
@@ -26,7 +26,7 @@ public partial class EnemyController : CharacterBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_state = EnemyState.STATIC;
+		_state = EnemyState.IDLE;
 		_health = 1;
 		_movementSpeed = 0.5f;
 		MovementTarget = new Vector2(0,0);
@@ -68,7 +68,7 @@ public partial class EnemyController : CharacterBody2D
 		MoveAndSlide();
 	}
 
-	private void _Static()
+	private void _Idle()
 	{
 		LookAt(_lookTarget);
 	}
@@ -95,8 +95,8 @@ public partial class EnemyController : CharacterBody2D
 			case EnemyState.CASTING:
 				_Casting();
 				break;
-			case EnemyState.STATIC:
-				_Static();
+			case EnemyState.IDLE:
+				_Idle();
 				break;
 			default :
 				break;
