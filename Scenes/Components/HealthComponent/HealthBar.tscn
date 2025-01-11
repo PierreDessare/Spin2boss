@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://h3hj2gcjp86h"]
+
+[ext_resource type="Script" path="res://Scripts/Components/HealthComponent/UI_HealthComponent.cs" id="1_jkd18"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh84u"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.588235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwqgq"]
+bg_color = Color(0.709804, 0.443137, 0.505882, 1)
+
+[node name="HealthBar" type="ProgressBar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -852.0
+offset_bottom = -621.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_dh84u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uwqgq")
+value = 50.0
+script = ExtResource("1_jkd18")
