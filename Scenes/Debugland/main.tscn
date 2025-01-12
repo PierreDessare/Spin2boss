@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bukg3xi88vll5"]
 
-[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_veh6e"]
-[ext_resource type="PackedScene" uid="uid://d08mh10yj57o" path="res://Scenes/Player.tscn" id="2_s1uv1"]
-[ext_resource type="PackedScene" uid="uid://8vhd7nhfn2q0" path="res://Scenes/sample_boss.tscn" id="2_tnfds"]
+[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_e87ns"]
+[ext_resource type="PackedScene" uid="uid://d08mh10yj57o" path="res://Scenes/Player.tscn" id="2_tstar"]
+[ext_resource type="PackedScene" uid="uid://8vhd7nhfn2q0" path="res://Scenes/sample_boss.tscn" id="3_f6x83"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vddow"]
 
 [node name="Main" type="Node"]
-script = ExtResource("1_veh6e")
+script = ExtResource("1_e87ns")
 
 [node name="Arena" type="Node" parent="."]
 
@@ -43,8 +43,8 @@ position = Vector2(580.75, 330.75)
 scale = Vector2(1162.5, 662.5)
 texture = SubResource("CanvasTexture_vddow")
 
-[node name="Sprite2D2" parent="." instance=ExtResource("2_s1uv1")]
+[node name="Sprite2D2" parent="." instance=ExtResource("2_tstar")]
 position = Vector2(564, 481)
 
-[node name="SampleBoss" parent="." instance=ExtResource("2_tnfds")]
+[node name="SampleBoss" parent="." instance=ExtResource("3_f6x83")]
 position = Vector2(560, 141)
