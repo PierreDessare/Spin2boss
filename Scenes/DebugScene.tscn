@@ -1,7 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0tlmn6h3m2pv"]
+[gd_scene load_steps=4 format=3 uid="uid://d0tlmn6h3m2pv"]
 
 [ext_resource type="PackedScene" uid="uid://d08mh10yj57o" path="res://Scenes/Player.tscn" id="1_1oq38"]
+[ext_resource type="PackedScene" uid="uid://h3hj2gcjp86h" path="res://Scenes/Components/HealthComponent/HealthBar.tscn" id="1_bees8"]
+[ext_resource type="PackedScene" uid="uid://coq4ou30uv4fn" path="res://Scenes/Components/HealthComponent/HealthComponent.tscn" id="3_r4mrc"]
 
 [node name="DebugScene" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_1oq38")]
+[node name="HealthBar" parent="." instance=ExtResource("1_bees8")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 330.0
+offset_bottom = 57.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Player" parent="." node_paths=PackedStringArray("_health", "_healthBar") instance=ExtResource("1_1oq38")]
+_health = NodePath("HealthComponent")
+_healthBar = NodePath("../HealthBar")
+
+[node name="HealthComponent" parent="Player" instance=ExtResource("3_r4mrc")]
+_health = 42
+_isDead = false
