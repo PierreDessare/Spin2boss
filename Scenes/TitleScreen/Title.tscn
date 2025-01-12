@@ -33,6 +33,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 scale = Vector2(5.68875, 3.14604)
 flat = true
+script = ExtResource("1_kcyqm")
 
 [node name="Option" type="Label" parent="HBoxContainer/VBoxContainer/MenuOptions"]
 layout_mode = 2
@@ -55,7 +56,6 @@ offset_right = 8.0
 offset_bottom = 8.0
 scale = Vector2(5.47227, 3.09874)
 flat = true
-script = ExtResource("1_kcyqm")
 
 [node name="Title" type="Label" parent="HBoxContainer"]
 layout_mode = 2
