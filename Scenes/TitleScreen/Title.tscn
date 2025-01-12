@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnrsevju33ba1"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/StartButton.cs" id="1_kcyqm"]
+[ext_resource type="Script" path="res://Scripts/Menus/QuitButton.cs" id="2_lsavb"]
+
+[node name="Title" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuOptions" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Play" type="Label" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+text = "Play"
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/MenuOptions/Play"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(5.68875, 3.14604)
+flat = true
+script = ExtResource("1_kcyqm")
+
+[node name="Option" type="Label" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+text = "Options"
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/MenuOptions/Option"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(7.97191, 3.186)
+flat = true
+
+[node name="Quit" type="Label" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/MenuOptions/Quit"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(5.47227, 3.09874)
+flat = true
+script = ExtResource("2_lsavb")
+
+[node name="Title" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Spin title, just replace this with a texture later"
+horizontal_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/CenterContainer"]
+layout_mode = 2
+text = "Idk Maybe some kind of Logo here"
