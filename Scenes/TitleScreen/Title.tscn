@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnrsevju33ba1"]
+[gd_scene load_steps=3 format=3 uid="uid://cnrsevju33ba1"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/StartButton.cs" id="1_kcyqm"]
+[ext_resource type="Script" path="res://Scripts/Menus/QuitButton.cs" id="2_lsavb"]
 
 [node name="Title" type="MarginContainer"]
 anchors_preset = 15
@@ -56,6 +57,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 scale = Vector2(5.47227, 3.09874)
 flat = true
+script = ExtResource("2_lsavb")
 
 [node name="Title" type="Label" parent="HBoxContainer"]
 layout_mode = 2
