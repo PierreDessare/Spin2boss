@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bukg3xi88vll5"]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_veh6e"]
-[ext_resource type="PackedScene" uid="uid://d08mh10yj57o" path="res://Scenes/sprite_2d.tscn" id="2_s1uv1"]
+[ext_resource type="PackedScene" uid="uid://d08mh10yj57o" path="res://Scenes/Player.tscn" id="2_s1uv1"]
 [ext_resource type="PackedScene" uid="uid://8vhd7nhfn2q0" path="res://Scenes/sample_boss.tscn" id="2_tnfds"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vddow"]

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dpu5q0bdawmys" path="res://icon.svg" id="1_3e1ex"]
 [ext_resource type="Script" path="res://Scripts/PlayerController.cs" id="2_jwba6"]
 [ext_resource type="Script" path="res://Scripts/ShootManager.cs" id="3_us4xd"]
-[ext_resource type="Texture2D" uid="uid://clcx6gymun3f7" path="res://arrow.png" id="4_vxatv"]
+[ext_resource type="Texture2D" uid="uid://clcx6gymun3f7" path="res://Textures/arrow.png" id="4_vxatv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15t7k"]
 size = Vector2(137, 143)
