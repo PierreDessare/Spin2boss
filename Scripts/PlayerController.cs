@@ -18,7 +18,18 @@ public partial class PlayerController : CharacterBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		
+	}
+
+	public void SetHealthComponent(HealthComponent health)
+	{
+		_health = health;
 		_health.DeathStatusChanged += OnDeathStatusChangedSignal;
+	}
+
+	public void SetUIHealthComponent(UI_HealthComponent healthbar)
+	{
+		_healthBar = healthbar;
 		_healthBar.Connect(_health);
 	}
 

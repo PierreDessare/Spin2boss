@@ -11,7 +11,7 @@ public partial class StartButton : Button
 
 	private void OnPressed()
 	{
-		GetTree().ChangeSceneToFile("res://Scenes/DebugScene.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/Debugland/DebugScene.tscn");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
