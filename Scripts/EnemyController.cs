@@ -12,9 +12,13 @@ public partial class EnemyController : CharacterBody2D
 	  IDLE, // Stay immobile with no action
 	  CASTING, // Stay immobile during an action
 	}
+	
+	[ExportGroup("Health Boss Component")]
+	[Export] private HealthComponent _health;
+	[Export] private UI_BossHealthComponent _healthBar;
 
 	private EnemyState _state = EnemyState.IDLE;
-	private float _health;
+	private string _bossName;
 	private float _movementSpeed;
 	private Vector2 _movementTarget;
 	private Vector2 _lookTarget;
@@ -29,7 +33,11 @@ public partial class EnemyController : CharacterBody2D
 	public override void _Ready()
 	{
 		_state = EnemyState.IDLE;
-		_health = 1;
+		_bossName = "BossNamePlaceholder";
+		_health = GetNode<HealthComponent>("BossHealthComponent");
+		_health.maxHealth = 200f;
+		_health.Health = 180f;
+		ConnectEnemyHealthBar(GetParent().GetNode<UI_BossHealthComponent>("UI_BossHealthBar"));
 		_movementSpeed = 100f;
 		_movementTarget = new Vector2(0,0);
 		_lookTarget = new Vector2(0,0);
@@ -37,10 +45,18 @@ public partial class EnemyController : CharacterBody2D
 		_patternMap = new Dictionary<int,Action>{}; // add attack patterns here 
 	}
 	
-	public void TakeDamage(float damage) {
-		_health -= damage;
+	public void ConnectEnemyHealthBar(UI_BossHealthComponent newBossHealthBar){
+		if(newBossHealthBar!=null){
+			_healthBar = newBossHealthBar;
+			_healthBar.Connect(_health,_bossName);
+		}
 		
-		if(_health == 0){
+	}
+	
+	public void TakeDamage(float damage) {
+		_health.Damage(damage);
+		
+		if(_health.Health == 0){
 			Death();
 		}
 	}
@@ -130,10 +146,13 @@ public partial class EnemyController : CharacterBody2D
 	}
 	
 	private void _RandomActionSelection(){
-		int value = GD.RandRange(0,_patternMap.Count);
-		if (_patternMap.TryGetValue(value, out var method))
-		{
-			method();
+		int maxRandomValue = _patternMap.Count;
+		if(maxRandomValue!=0){
+			int randomValue = GD.RandRange(0,maxRandomValue);
+			if (_patternMap.TryGetValue(randomValue, out var method))
+			{
+				method();
+			}
 		}
 	}
 
@@ -165,6 +184,17 @@ public partial class EnemyController : CharacterBody2D
 			_RandomActionSelection();
 		}
 
+	}
+	
+	
+	public override void _UnhandledInput(InputEvent @event)
+	{
+		if (@event.IsActionPressed("BossStatusDisplay")) {
+			GD.Print(_bossName);
+			GD.Print(_state);
+			GD.Print(_health.maxHealth);
+			GD.Print(_health.Health);
+		}
 	}
 	
 }

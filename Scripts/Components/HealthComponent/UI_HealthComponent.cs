@@ -13,7 +13,7 @@ public partial class UI_HealthComponent : ProgressBar
 		_healthComponent.HealthChanged += OnHealthChangedSignal;
 	}
 
-	public void OnHealthChangedSignal(int newValue)
+	public void OnHealthChangedSignal(float newValue)
 	{
 		Value = newValue;
 	}

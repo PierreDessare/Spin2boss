@@ -3,15 +3,15 @@ using Godot;
 
 public partial class HealthComponent : Node
 {
-	[Signal] public delegate void HealthChangedEventHandler(int newValue);
+	[Signal] public delegate void HealthChangedEventHandler(float newValue);
 	[Signal] public delegate void DeathStatusChangedEventHandler(bool isDead);
 
-	[Export] public int maxHealth = 100;	
-	[Export] private int _health = 0;
-	public int Health
+	[Export] public float maxHealth = 100;	
+	[Export] private float _health = 0;
+	public float Health
 	{
 		get => _health;
-		private set
+		set
 		{
 			_health = Math.Clamp(value, 0, maxHealth);
 			if (0 >= Health) {
@@ -34,11 +34,11 @@ public partial class HealthComponent : Node
 		}
 	}
 
-	public void Damage(int value)
+	public void Damage(float value)
 	{
 		Health -= value;
 	}
-	public void Heal(int value)
+	public void Heal(float value)
 	{
 		Health += value;
 	}
