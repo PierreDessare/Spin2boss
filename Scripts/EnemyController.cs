@@ -37,7 +37,7 @@ public partial class EnemyController : CharacterBody2D
 		_health = GetNode<HealthComponent>("BossHealthComponent");
 		_health.maxHealth = 200f;
 		_health.Health = 180f;
-		ConnectEnemyHealthBar(GetParent().GetNode<UI_BossHealthComponent>("UI_BossHealthBar"));
+		ConnectEnemyHealthBar(GetParent().GetNode<UI_BossHealthComponent>("BossHealthBar"));
 		_movementSpeed = 100f;
 		_movementTarget = new Vector2(0,0);
 		_lookTarget = new Vector2(0,0);
