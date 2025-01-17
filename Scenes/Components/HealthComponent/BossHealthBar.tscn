@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmi8jtynnoeyj"]
+
+[ext_resource type="Script" path="res://Scripts/Components/HealthComponent/UI_BossHealthComponent.cs" id="1_skmls"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh84u"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 0.588235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwqgq"]
+bg_color = Color(0.709804, 0.443137, 0.505882, 1)
+
+[node name="BossHealthBar" type="ProgressBar"]
+anchors_preset = -1
+anchor_left = -0.186632
+anchor_top = -0.0432099
+anchor_right = 0.186632
+anchor_bottom = 0.0432099
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_dh84u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uwqgq")
+value = 50.0
+show_percentage = false
+script = ExtResource("1_skmls")
+metadata/_edit_use_anchors_ = true
+
+[node name="BossHealthBarText" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.267857
+anchor_right = 1.0
+anchor_bottom = 0.678571
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center] Placeholder Text [/center]"
+scroll_active = false
+text_direction = 1
+metadata/_edit_use_anchors_ = true

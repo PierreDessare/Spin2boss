@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0tlmn6h3m2pv"]
+[gd_scene load_steps=4 format=3 uid="uid://d0tlmn6h3m2pv"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager/GameManager.cs" id="1_duujw"]
+[ext_resource type="PackedScene" uid="uid://dmi8jtynnoeyj" path="res://Scenes/Components/HealthComponent/BossHealthBar.tscn" id="4_xw4yh"]
+[ext_resource type="PackedScene" uid="uid://qar4sbi6grou" path="res://Scenes/Enemy.tscn" id="5_kwnv8"]
 
 [node name="DebugScene" type="Node"]
 script = ExtResource("1_duujw")
+
+[node name="BossHealthBar" parent="." instance=ExtResource("4_xw4yh")]
+offset_left = 565.0
+offset_top = 590.0
+offset_right = 565.0
+offset_bottom = 590.0
+
+[node name="Enemy" parent="." instance=ExtResource("5_kwnv8")]
+position = Vector2(837, 313)
