@@ -14,9 +14,16 @@ public partial class GameManager : Node
         ply.Position = _playerSpawnPosition;
         CanvasLayer hud = (CanvasLayer)HUD.Instantiate();
         GetTree().CurrentScene.AddChild(hud);
+        hud.GetNode<HealthComponent>("HealthComponent").DeathStatusChanged += OnDeathStatusChanged;
         ply.SetHealthComponent(hud.GetNode<HealthComponent>("HealthComponent"));
         ply.SetUIHealthComponent(hud.GetNode<UI_HealthComponent>("HealthBar"));
     }
-    
-    
+
+    private void OnDeathStatusChanged(bool isdead)
+    {
+        if (isdead)
+        {
+            GetTree().ChangeSceneToFile("res://Scenes/TitleScreen/Title.tscn");
+        }
+    }
 }
